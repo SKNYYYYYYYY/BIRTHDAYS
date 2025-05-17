@@ -11,6 +11,20 @@ def mydb():
 		autocommit=True
 	)
 
+# create db and table
+def setup_database(cur):
+	cur.execute("CREATE DATABASE  IF NOT EXISTS birthdays")
+	sql = """CREATE TABLE IF NOT EXISTS celeb  ( 
+				no INT AUTO_INCREMENT PRIMARY KEY,
+				month VARCHAR(10),
+				generation VARCHAR(15),
+				date VARCHAR(5),
+				name VARCHAR(40),
+				metadata VARCHAR(30)
+		)"""	
+
+	cur.execute(sql)
+
 # return the month celebrants
 def get_month_celebrants(month, cur):
 	cur.execute('SELECT * FROM whole_year WHERE month=%s', month)
