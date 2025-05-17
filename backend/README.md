@@ -18,7 +18,6 @@ A lightweight FastAPI application for managing birthday records in a MySQL datab
 | Framework       | FastAPI    |
 | Server         | Uvicorn    |
 | Database       | MySQL      |
-| Connector      | PyMySQL    |
 
 ## 🚀 Quick Start
 
@@ -28,9 +27,8 @@ A lightweight FastAPI application for managing birthday records in a MySQL datab
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/birthday-api.git
-cd birthday-api
-pip install -r requirements.txt
+git clone https://github.com/SKNYYYYYYYY/BIRTHDAYS.git
+cd BIRTHDAYS
 ```
 
 ### Database Setup
@@ -61,7 +59,7 @@ connection = pymysql.connect(
 
 ### Running the Application
 ```bash
-uvicorn main:app --reload
+python3 main.py
 ```
 
 ## 🌐 API Endpoints
