@@ -96,23 +96,4 @@ curl -X POST "http://localhost:8000/new_celebrant" \
 curl "http://localhost:8000/search?name=kip"
 ```
 
-## 📦 Deployment Options
-
-### Docker
-```dockerfile
-FROM python:3.9
-WORKDIR /app
-COPY . .
-RUN pip install -r requirements.txt
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-### Environment Variables
-Create `.env` file:
-```ini
-DB_HOST=localhost
-DB_USER=your_user
-DB_PASS=your_password
-DB_NAME=birthdays
-```
 
