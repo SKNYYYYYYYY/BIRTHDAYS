@@ -1,6 +1,4 @@
-Here's a refined version of your README with improved structure, clarity, and visual appeal:
 
-```markdown
 # 🎂 Birthday Celebrants API
 
 A lightweight FastAPI application for managing birthday records in a MySQL database.
