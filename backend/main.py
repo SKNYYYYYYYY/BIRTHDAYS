@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Form
-from database import get_month_celebrants,save, search, mydb, delete
+from database import setup_database, get_month_celebrants,save, search, mydb, delete
 from pydantic import BaseModel
 
 
@@ -9,6 +9,16 @@ app = FastAPI()
 # create database connection
 conn = mydb()
 cur = conn.cursor()
+
+#initial startup
+@app.on_event("startup")
+def create_db_and_table():
+	try:
+		setup_database(cur)
+		print("birthdays database and whole_year table created succesfully ")
+	except Exception as e:
+		print(f"Error creating birthdays database and whole_year table. \n{e}") 
+		return
 
 #root endpoint
 @app.get("/")
